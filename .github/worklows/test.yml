@@ -1,0 +1,6 @@
+runs-on: windows-latest
+
+steps:
+  - uses: {github action}
+  - name: Label
+  - run: {command}
