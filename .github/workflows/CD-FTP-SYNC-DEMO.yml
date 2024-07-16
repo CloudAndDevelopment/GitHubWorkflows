@@ -1,0 +1,28 @@
+name: CD-FTP-SYNC
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+jobs:
+  web-deploy:
+    name: Deploy
+    #runs-on: ubuntu-latest
+    runs-on: self-hosted
+    steps:
+    - name: Get latest code
+      uses: actions/checkout@v2
+
+    # GitHub action: https://github.com/SamKirkland/FTP-Deploy-Action
+    - name: Sync files
+      uses: SamKirkland/FTP-Deploy-Action@4.0.0
+      with:
+        server: ${{ secrets.FTP_SERVER }}
+        username: ${{ secrets.FTP_USERNAME }}
+        password: ${{ secrets.FTP_PASSWORD }}
+        exclude: .git*
+          - **.git*
+          - .git*/**
+          -  **/.git*/**
+          - config.php 
