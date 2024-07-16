@@ -25,3 +25,11 @@
 * **Run:** Runs command-line programs that do not exceed 21,000 characters using the operating system's shell. If you do not provide a name, the step name will default to the text specified in the run command.
 
 > Source: https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions
+
+<br/>
+
+## Workflow Status badge
+
+Example from [blank.yml](https://raw.githubusercontent.com/CloudAndDevelopment/GitHubWorkflows/main/.github/workflows/blank.yml)
+
+[![CI](https://github.com/CloudAndDevelopment/GitHubWorkflows/actions/workflows/blank.yml/badge.svg)](https://github.com/CloudAndDevelopment/GitHubWorkflows/actions/workflows/blank.yml)
